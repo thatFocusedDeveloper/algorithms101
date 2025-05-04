@@ -1,5 +1,6 @@
 package challenges.interviews;
 
+import course.challenges.interviews.FaceBookArrayIntersector;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

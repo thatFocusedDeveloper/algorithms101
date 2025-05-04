@@ -1,5 +1,6 @@
 package algorithms.graphs.dijsktra;
 
+import course.algorithms.graphs.dijsktra.ShortestPath;
 import org.junit.Before;
 import org.junit.Test;
 

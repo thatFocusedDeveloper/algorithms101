@@ -1,5 +1,6 @@
 package challenges.interviews;
 
+import course.challenges.interviews.AmazonArrayMerger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

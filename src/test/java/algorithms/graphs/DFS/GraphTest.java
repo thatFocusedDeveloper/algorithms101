@@ -1,5 +1,6 @@
 package algorithms.graphs.DFS;
 
+import course.algorithms.graphs.DFS.Graph;
 import org.junit.Before;
 import org.junit.Test;
 

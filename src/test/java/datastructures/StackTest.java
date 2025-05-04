@@ -1,5 +1,6 @@
 package datastructures;
 
+import course.datastructures.Stack;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package algorithms;
 
-import algorithms.MinIntHeap;
+import course.algorithms.MinIntHeap;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

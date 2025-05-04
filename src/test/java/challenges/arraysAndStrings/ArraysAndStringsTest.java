@@ -1,6 +1,14 @@
 package challenges.arraysAndStrings;
 
-import datastructures.PrettyPrinter;
+import course.challenges.arraysAndStrings.Compressor;
+import course.challenges.arraysAndStrings.OneAwayDetector;
+import course.challenges.arraysAndStrings.PalindromeDetector;
+import course.challenges.arraysAndStrings.PermutationDetector;
+import course.challenges.arraysAndStrings.URLConverter;
+import course.challenges.arraysAndStrings.UniqueCharacterDetector;
+import course.challenges.arraysAndStrings.Zeroer1;
+import course.challenges.arraysAndStrings.Zeroer2;
+import course.datastructures.PrettyPrinter;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,5 +1,6 @@
 package algorithms.graphs.DFS;
 
+import course.algorithms.graphs.DFS.PathFinder;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
 package algorithms;
 
+import course.algorithms.MergeSort;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

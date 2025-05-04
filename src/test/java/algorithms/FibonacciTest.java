@@ -1,5 +1,7 @@
 package algorithms;
 
+import course.algorithms.FibonacciMemoized;
+import course.algorithms.FibonacciNaive;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

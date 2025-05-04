@@ -1,5 +1,6 @@
 package algorithms.graphs.BFS;
 
+import course.algorithms.graphs.BFS.Graph;
 import org.junit.Before;
 import org.junit.Test;
 

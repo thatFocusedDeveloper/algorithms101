@@ -1,5 +1,6 @@
 package algorithms;
 
+import course.algorithms.MaxIntHeap;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,14 @@
 package challenges.classics;
 
+import course.challenges.classics.Anagram;
+import course.challenges.classics.CaesarCipherAdvanced;
+import course.challenges.classics.CaesarCipherSimple;
+import course.challenges.classics.CharacterCount;
+import course.challenges.classics.FizzBuzz;
+import course.challenges.classics.IntReverser;
+import course.challenges.classics.RansomNote;
+import course.challenges.classics.SieveOfEratosthenes;
+import course.challenges.classics.StringReverser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

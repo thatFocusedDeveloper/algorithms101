@@ -1,6 +1,11 @@
 package challenges.linkedLists;
 
-import datastructures.Stack;
+import course.challenges.linkedLists.LinkedListAdder;
+import course.challenges.linkedLists.LinkedListLoopDetector;
+import course.challenges.linkedLists.LinkedListRemoveDuplicates;
+import course.challenges.linkedLists.Node;
+import course.challenges.linkedLists.Palindrome;
+import course.datastructures.Stack;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

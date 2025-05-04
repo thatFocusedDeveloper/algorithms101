@@ -1,5 +1,7 @@
 package challenges.stacksAndQueues;
 
+import course.challenges.stacksAndQueues.MinStack;
+import course.challenges.stacksAndQueues.StackOfPlates;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

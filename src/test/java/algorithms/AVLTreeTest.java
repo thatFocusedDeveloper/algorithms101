@@ -1,6 +1,6 @@
 package algorithms;
 
-import org.junit.Assert;
+import course.algorithms.AVLTree;
 import org.junit.Before;
 import org.junit.Test;
 

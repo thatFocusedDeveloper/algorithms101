@@ -1,5 +1,9 @@
 package challenges.binaryTrees;
 
+import course.challenges.binaryTrees.CustomBinaryTree;
+import course.challenges.binaryTrees.CustomBinaryTreeNode;
+import course.challenges.binaryTrees.SimpleBinarySearchTree;
+import course.challenges.binaryTrees.SubtreeChecker;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
