@@ -1,22 +1,35 @@
 package myPractice.round1.datastructures;
 
-public class DynamicArray {
-    int size=0;
-    int capacity=0;
-    Object[] arr;
+import java.util.ArrayList;
 
-    DynamicArray(Object capacity){}
+public class DynamicArray<String> {
+    private int size=0;
+    private int initialCapacity;
+    private Object[] arr;
 
-    // Create
+    // Create new Dynamic Array
+    DynamicArray(int capacity){
+        this.initialCapacity=capacity;
+        arr = new Object[initialCapacity];
+    }
+
+
     // Add to the end of the Array
+    public void add(Object obj) {
+        arr[size]=(String)obj;
+        size++;
+    }
     // Insert at an index
+    public void set(int index, int obj) {
+        arr[index] = obj;
+    }
 
     // Retrieve
-    // Get from an index
+    // -> Get from an index
+    public Object get(int index) {
+        return arr[index];
+    }
 
-
-    // Update
-    // Set at an Index
 
     // Delete
     // Delete at an index
