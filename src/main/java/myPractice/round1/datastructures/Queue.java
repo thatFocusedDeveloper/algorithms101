@@ -50,17 +50,32 @@ public class Queue<T> {
     }
 
     public T dequeue() {
-        if(head == null) {
+        if (head == null) {
             throw new IllegalStateException("Queue is empty");
         }
         Node<T> curNode = head;
         T data = curNode.data;
-        head=head.next;
-        curNode.next=null;
-        if(head==null) {
-            tail=null;
+        head = head.next;
+        curNode.next = null;
+        if (head == null) {
+            tail = null;
         }
         size--;
         return data;
+    }
+
+    // Useful for debugging
+    @Override
+    public String toString() {
+        if (isEmpty()) return "[]";
+
+        StringBuilder sb = new StringBuilder("[");
+        Node<T> current = head;
+        while (current != null) {
+            sb.append(current.data);
+            if (current.next != null) sb.append(", ");
+            current = current.next;
+        }
+        return sb.append("]").toString();
     }
 }
