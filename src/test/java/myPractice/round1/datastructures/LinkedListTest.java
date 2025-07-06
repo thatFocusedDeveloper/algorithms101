@@ -18,11 +18,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class LinkedListTest {
 
-    private LinkedList list;
+    private LinkedList<Integer> list;
 
     @BeforeEach
     public void setUp() {
-        list = new LinkedList();
+        list = new LinkedList<>();
     }
 
     // Constructor and Initial State Tests

@@ -2,16 +2,16 @@ package myPractice.round1.datastructures;
 
 import java.util.Objects;
 
-public class LinkedList {
+public class LinkedList<T> {
     private Node head;
     private Node tail;
     private int size=0;
 
-    private class Node {
-        Integer data;           // Package-private (no modifier)
+    private class Node<T> {
+        T data;           // Package-private (no modifier)
         Node next;        // Package-private (no modifier)
 
-        public Node (Integer data) {
+        public Node (T data) {
             this.data = data;
         }
     }
@@ -27,7 +27,7 @@ public class LinkedList {
 
     // Insert
     // Add to head
-    public void addFront(Integer data) {
+    public void addFront(T data) {
         Node newNode = new Node(data);
         if(head==null) {
             head = newNode;
@@ -42,7 +42,7 @@ public class LinkedList {
 
 
     // Add to Tail
-    public void addBack(Integer data) {
+    public void addBack(T data) {
         if(data == null){
             throw new IllegalArgumentException("Data cannot be null");
         }
@@ -60,18 +60,18 @@ public class LinkedList {
 
 
     // Get Head
-    public Integer getFirst() {
+    public T getFirst() {
         if(head==null) {
             throw new IllegalStateException("List is empty");
         }
-        return head.data;
+        return (T) head.data;
     }
 
-    public Integer getLast() {
+    public T getLast() {
         if(head==null) {
             throw new IllegalStateException("List is empty");
         }
-        return tail.data;
+        return (T) tail.data;
     }
 
 
@@ -101,7 +101,7 @@ public class LinkedList {
         size--;
     }
 
-    public boolean delete(Integer data) {
+    public boolean delete(T data) {
         if (head == null) {
             return false; // Return false instead of throwing exception for empty list
         }
