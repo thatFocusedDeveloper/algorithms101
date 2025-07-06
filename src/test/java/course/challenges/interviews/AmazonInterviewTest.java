@@ -1,9 +1,9 @@
 package course.challenges.interviews;
 
 import course.challenges.interviews.AmazonArrayMerger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ public class AmazonInterviewTest {
 
     private AmazonArrayMerger merger;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         merger = new AmazonArrayMerger();
     }
@@ -25,7 +25,7 @@ public class AmazonInterviewTest {
         int[] result = merger.merge(L1, L2);
         int[] expected = { 1,2,3,5,5,7,8,11,14 };
 
-        Assert.assertTrue(Arrays.equals(expected, result));
+        assertTrue(Arrays.equals(expected, result));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class AmazonInterviewTest {
         int[] result = merger.merge(L1, L2);
         int[] expected = { 1,3,5,7 };
 
-        Assert.assertTrue(Arrays.equals(expected, result));
+        assertTrue(Arrays.equals(expected, result));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class AmazonInterviewTest {
         int[] result = merger.merge(L1, L2);
         int[] expected = { 2,5,8,11,14 };
 
-        Assert.assertTrue(Arrays.equals(expected, result));
+        assertTrue(Arrays.equals(expected, result));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class AmazonInterviewTest {
         int[] result = merger.merge(L1, L2);
         int[] expected = { 1,2,3,4,5,6 };
 
-        Assert.assertTrue(Arrays.equals(expected, result));
+        assertTrue(Arrays.equals(expected, result));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class AmazonInterviewTest {
         int[] result = merger.merge(L1, L2);
         int[] expected = { 1,4,5,6,7,9 };
 
-        Assert.assertTrue(Arrays.equals(expected, result));
+        assertTrue(Arrays.equals(expected, result));
     }
 
 }

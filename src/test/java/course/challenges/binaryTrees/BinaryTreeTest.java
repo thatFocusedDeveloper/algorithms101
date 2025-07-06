@@ -4,15 +4,15 @@ import course.challenges.binaryTrees.CustomBinaryTree;
 import course.challenges.binaryTrees.CustomBinaryTreeNode;
 import course.challenges.binaryTrees.SimpleBinarySearchTree;
 import course.challenges.binaryTrees.SubtreeChecker;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BinaryTreeTest {
 
     private SubtreeChecker treeChecker;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         treeChecker = new SubtreeChecker();
     }
@@ -37,7 +37,7 @@ public class BinaryTreeTest {
 //        t1.prettyPrint();
 //        System.out.println(t1.getOrder());
 
-        Assert.assertEquals("5324768", t1.getOrder());
+        assertEquals("5324768", t1.getOrder());
 
 
         // Create our T2 tree
@@ -48,9 +48,9 @@ public class BinaryTreeTest {
 //        t2.prettyPrint();
 //        System.out.println(t2.getOrder());
 
-        Assert.assertEquals("768", t2.getOrder());
+        assertEquals("768", t2.getOrder());
 
-        Assert.assertTrue(treeChecker.isSubTree(t1, t2));
+        assertTrue(treeChecker.isSubTree(t1, t2));
     }
 
     @Test
@@ -103,7 +103,7 @@ public class BinaryTreeTest {
         binaryTree.add(node2, node1, "right");
 
         // Now we are in a position to count paths
-        Assert.assertEquals(3, binaryTree.countPathsWithSum(8));
+        assertEquals(3, binaryTree.countPathsWithSum(8));
     }
 
 }

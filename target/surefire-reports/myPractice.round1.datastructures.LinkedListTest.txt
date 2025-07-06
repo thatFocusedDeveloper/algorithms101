@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: myPractice.round1.datastructures.LinkedListTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! -- in myPractice.round1.datastructures.LinkedListTest
+myPractice.round1.datastructures.LinkedListTest.testAddFirstElement -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The constructor LinkedList.Node(T) refers to the missing type T
+
+	at myPractice.round1.datastructures.LinkedList.addFront(LinkedList.java:31)
+	at myPractice.round1.datastructures.LinkedListTest.testAddFirstElement(LinkedListTest.java:39)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

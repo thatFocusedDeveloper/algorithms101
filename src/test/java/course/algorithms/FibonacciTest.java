@@ -2,16 +2,16 @@ package course.algorithms;
 
 import course.algorithms.FibonacciMemoized;
 import course.algorithms.FibonacciNaive;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class FibonacciTest {
 
     private FibonacciNaive naive;
     private FibonacciMemoized memo;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         naive = new FibonacciNaive();
         memo = new FibonacciMemoized();
@@ -19,28 +19,28 @@ public class FibonacciTest {
 
     @Test
     public void Naive() {
-        Assert.assertEquals(0, naive.fib(0));
-        Assert.assertEquals(1, naive.fib(1));
-        Assert.assertEquals(1, naive.fib(2));
-        Assert.assertEquals(2, naive.fib(3));
-        Assert.assertEquals(3, naive.fib(4));
-        Assert.assertEquals(5, naive.fib(5));
-        Assert.assertEquals(8, naive.fib(6));
-        Assert.assertEquals(13, naive.fib(7));
-        Assert.assertEquals(21, naive.fib(8));
+        assertEquals(0, naive.fib(0));
+        assertEquals(1, naive.fib(1));
+        assertEquals(1, naive.fib(2));
+        assertEquals(2, naive.fib(3));
+        assertEquals(3, naive.fib(4));
+        assertEquals(5, naive.fib(5));
+        assertEquals(8, naive.fib(6));
+        assertEquals(13, naive.fib(7));
+        assertEquals(21, naive.fib(8));
     }
 
     @Test
     public void Memoized() {
-        Assert.assertEquals(0, memo.fib(0));
-        Assert.assertEquals(1, memo.fib(1));
-        Assert.assertEquals(1, memo.fib(2));
-        Assert.assertEquals(2, memo.fib(3));
-        Assert.assertEquals(3, memo.fib(4));
-        Assert.assertEquals(5, memo.fib(5));
-        Assert.assertEquals(8, memo.fib(6));
-        Assert.assertEquals(13, memo.fib(7));
-        Assert.assertEquals(21, memo.fib(8));
+        assertEquals(0, memo.fib(0));
+        assertEquals(1, memo.fib(1));
+        assertEquals(1, memo.fib(2));
+        assertEquals(2, memo.fib(3));
+        assertEquals(3, memo.fib(4));
+        assertEquals(5, memo.fib(5));
+        assertEquals(8, memo.fib(6));
+        assertEquals(13, memo.fib(7));
+        assertEquals(21, memo.fib(8));
     }
 
     @Test

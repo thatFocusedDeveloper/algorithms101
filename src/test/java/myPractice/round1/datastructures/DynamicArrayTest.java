@@ -1,15 +1,15 @@
 package myPractice.round1.datastructures;
 
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DynamicArrayTest {
 
     private DynamicArray<String> array;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         array = new DynamicArray<>(2);
     }
@@ -17,15 +17,15 @@ public class DynamicArrayTest {
     @Test
     public void testAddElementToEnd() {
         array.add("Element1");
-        Assert.assertEquals(1, array.size());
-        Assert.assertEquals("Element1", array.get(0));
+        assertEquals(1, array.size());
+        assertEquals("Element1", array.get(0));
     }
 
     @Test
     public void testRetrieveElementFromIndex() {
         array.add("Element1");
         array.add("Element2");
-        Assert.assertEquals("Element2", array.get(1));
+        assertEquals("Element2", array.get(1));
     }
 
 
@@ -33,7 +33,7 @@ public class DynamicArrayTest {
     public void GetAndSet() {
         array.add("b");
         array.set(0, "a");
-        Assert.assertEquals("a", array.get(0));
+        assertEquals("a", array.get(0));
     }
 
     @Test
@@ -44,11 +44,11 @@ public class DynamicArrayTest {
 
         array.add(1, "d");
 
-        Assert.assertEquals(4, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("d", array.get(1));
-        Assert.assertEquals("b", array.get(2));
-        Assert.assertEquals("c", array.get(3));
+        assertEquals(4, array.size());
+        assertEquals("a", array.get(0));
+        assertEquals("d", array.get(1));
+        assertEquals("b", array.get(2));
+        assertEquals("c", array.get(3));
     }
 
     @Test
@@ -59,9 +59,9 @@ public class DynamicArrayTest {
 
         array.remove(0);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("b", array.get(0));
-        Assert.assertEquals("c", array.get(1));
+        assertEquals(2, array.size());
+        assertEquals("b", array.get(0));
+        assertEquals("c", array.get(1));
     }
 
     @Test
@@ -72,9 +72,9 @@ public class DynamicArrayTest {
 
         array.remove(1);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("c", array.get(1));
+        assertEquals(2, array.size());
+        assertEquals("a", array.get(0));
+        assertEquals("c", array.get(1));
     }
 
     @Test
@@ -85,35 +85,35 @@ public class DynamicArrayTest {
 
         array.remove(2);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("b", array.get(1));
+        assertEquals(2, array.size());
+        assertEquals("a", array.get(0));
+        assertEquals("b", array.get(1));
     }
 
     @Test
     public void testIsEmpty() {
-        Assert.assertTrue(array.isEmpty());
+        assertTrue(array.isEmpty());
         array.add("a");
-        Assert.assertFalse(array.isEmpty());
+        assertFalse(array.isEmpty());
     }
 
     @Test
     public void testContains()  {
-        Assert.assertFalse(array.contains("a"));
+        assertFalse(array.contains("a"));
         array.add("a");
-        Assert.assertTrue(array.contains("a"));
+        assertTrue(array.contains("a"));
         array.add("b");
         array.add("b");
         array.add("c");
-        Assert.assertTrue(array.contains("b"));
-        Assert.assertTrue(array.contains("c"));
+        assertTrue(array.contains("b"));
+        assertTrue(array.contains("c"));
         array.remove(3);
-        Assert.assertFalse(array.contains("c"));
+        assertFalse(array.contains("c"));
         array.remove(2);
-        Assert.assertTrue(array.contains("b"));
+        assertTrue(array.contains("b"));
         array.remove(1);
-        Assert.assertFalse(array.contains("b"));
+        assertFalse(array.contains("b"));
         array.remove(0);
-        Assert.assertFalse(array.contains("a"));
+        assertFalse(array.contains("a"));
     }
 }

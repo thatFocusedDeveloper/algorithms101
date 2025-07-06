@@ -1,14 +1,14 @@
 package course.algorithms.graphs.DFS;
 
 import course.algorithms.graphs.DFS.Graph;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class GraphTest {
 
     private Graph g;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         g = new Graph(8);
     }

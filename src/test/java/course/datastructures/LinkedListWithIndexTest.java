@@ -1,15 +1,15 @@
 package course.datastructures;
 
 import course.datastructures.LinkedListWithIndex;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class LinkedListWithIndexTest {
 
     private LinkedListWithIndex linkedList;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         linkedList = new LinkedListWithIndex();
     }
@@ -20,9 +20,9 @@ public class LinkedListWithIndexTest {
         linkedList.addFront(100, 2);
         linkedList.addFront(101, 3);
 
-        Assert.assertEquals(1, linkedList.getByIndex(99));
-        Assert.assertEquals(2, linkedList.getByIndex(100));
-        Assert.assertEquals(3, linkedList.getByIndex(101));
+        assertEquals(1, linkedList.getByIndex(99));
+        assertEquals(2, linkedList.getByIndex(100));
+        assertEquals(3, linkedList.getByIndex(101));
     }
 
 }

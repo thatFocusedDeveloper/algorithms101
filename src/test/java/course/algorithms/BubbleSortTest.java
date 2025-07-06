@@ -1,15 +1,15 @@
 package course.algorithms;
 
 import course.algorithms.BubbleSort;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BubbleSortTest {
 
     private BubbleSort bubbleSort;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         bubbleSort = new BubbleSort();
     }
@@ -20,11 +20,11 @@ public class BubbleSortTest {
 
         int[] sorted = bubbleSort.sort(array);
 
-        Assert.assertEquals(1, sorted[0]);
-        Assert.assertEquals(2, sorted[1]);
-        Assert.assertEquals(4, sorted[2]);
-        Assert.assertEquals(5, sorted[3]);
-        Assert.assertEquals(8, sorted[4]);
+        assertEquals(1, sorted[0]);
+        assertEquals(2, sorted[1]);
+        assertEquals(4, sorted[2]);
+        assertEquals(5, sorted[3]);
+        assertEquals(8, sorted[4]);
     }
 
 }

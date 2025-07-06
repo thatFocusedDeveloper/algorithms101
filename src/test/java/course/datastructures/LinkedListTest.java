@@ -1,15 +1,15 @@
 package course.datastructures;
 
 import course.datastructures.LinkedList;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
 
     private LinkedList linkedList;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         linkedList = new LinkedList();
     }
@@ -20,14 +20,14 @@ public class LinkedListTest {
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-        Assert.assertEquals(3, linkedList.getFirst());
-        Assert.assertEquals(1, linkedList.getLast());
+        assertEquals(3, linkedList.getFirst());
+        assertEquals(1, linkedList.getLast());
     }
 
     @Test
     public void GetFirst() {
         linkedList.addFront(1);
-        Assert.assertEquals(1, linkedList.getFirst());
+        assertEquals(1, linkedList.getFirst());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class LinkedListTest {
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-        Assert.assertEquals(1, linkedList.getLast());
+        assertEquals(1, linkedList.getLast());
     }
 
     @Test
@@ -45,17 +45,17 @@ public class LinkedListTest {
         linkedList.addBack(2);
         linkedList.addBack(3);
 
-        Assert.assertEquals(1, linkedList.getFirst());
-        Assert.assertEquals(3, linkedList.getLast());
+        assertEquals(1, linkedList.getFirst());
+        assertEquals(3, linkedList.getLast());
     }
 
     @Test
     public void Size() {
-        Assert.assertEquals(0, linkedList.size());
+        assertEquals(0, linkedList.size());
         linkedList.addBack(1);
-        Assert.assertEquals(1, linkedList.size());
+        assertEquals(1, linkedList.size());
         linkedList.addBack(2);
-        Assert.assertEquals(2, linkedList.size());
+        assertEquals(2, linkedList.size());
     }
 
     @Test
@@ -66,7 +66,7 @@ public class LinkedListTest {
 
         linkedList.clear();
 
-        Assert.assertEquals(0, linkedList.size());
+        assertEquals(0, linkedList.size());
     }
 
     @Test
@@ -77,9 +77,9 @@ public class LinkedListTest {
 
         linkedList.deleteValue(2);
 
-        Assert.assertEquals(2, linkedList.size());
-        Assert.assertEquals(1, linkedList.getFirst());
-        Assert.assertEquals(3, linkedList.getLast());
+        assertEquals(2, linkedList.size());
+        assertEquals(1, linkedList.getFirst());
+        assertEquals(3, linkedList.getLast());
     }
 
     @Test
@@ -91,9 +91,9 @@ public class LinkedListTest {
 
         linkedList.deleteValue(4);
 
-        Assert.assertEquals(3, linkedList.size());
-        Assert.assertEquals(1, linkedList.getFirst());
-        Assert.assertEquals(3, linkedList.getLast());
+        assertEquals(3, linkedList.size());
+        assertEquals(1, linkedList.getFirst());
+        assertEquals(3, linkedList.getLast());
 
         linkedList.print();
     }

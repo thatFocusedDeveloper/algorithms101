@@ -1,8 +1,8 @@
 package course.algorithms.graphs.dijsktra;
 
 import course.algorithms.graphs.dijsktra.ShortestPath;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 //
 // Note: This is code for a future episode. Stay tuned!
@@ -12,7 +12,7 @@ public class ShortestPathTest {
 
     private ShortestPath g;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         g = new ShortestPath();
     }

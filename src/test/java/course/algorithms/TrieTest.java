@@ -1,9 +1,9 @@
 package course.algorithms;
 
 import course.algorithms.Trie;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 //
 // Note: This is code for a future episode. Stay tuned!
@@ -13,7 +13,7 @@ public class TrieTest {
 
     private Trie trie;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         trie = new Trie();
     }
@@ -21,11 +21,11 @@ public class TrieTest {
     @Test
     public void StartsWith() {
         trie.insert("Apple");
-        Assert.assertTrue(trie.startsWith("A"));
-        Assert.assertTrue(trie.startsWith("Ap"));
-        Assert.assertTrue(trie.startsWith("App"));
-        Assert.assertTrue(trie.startsWith("Appl"));
-        Assert.assertTrue(trie.startsWith("Apple"));
+        assertTrue(trie.startsWith("A"));
+        assertTrue(trie.startsWith("Ap"));
+        assertTrue(trie.startsWith("App"));
+        assertTrue(trie.startsWith("Appl"));
+        assertTrue(trie.startsWith("Apple"));
     }
 
     @Test
@@ -35,10 +35,10 @@ public class TrieTest {
         trie.insert("pass");
         trie.insert("part");
 
-        Assert.assertTrue(trie.containsWord("pot"));
-        Assert.assertTrue(trie.containsWord("past"));
-        Assert.assertTrue(trie.containsWord("pass"));
-        Assert.assertTrue(trie.containsWord("part"));
-        Assert.assertFalse(trie.containsWord("ps"));
+        assertTrue(trie.containsWord("pot"));
+        assertTrue(trie.containsWord("past"));
+        assertTrue(trie.containsWord("pass"));
+        assertTrue(trie.containsWord("part"));
+        assertFalse(trie.containsWord("ps"));
     }
 }

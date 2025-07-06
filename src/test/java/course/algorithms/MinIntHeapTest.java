@@ -1,15 +1,15 @@
 package course.algorithms;
 
 import course.algorithms.MinIntHeap;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class MinIntHeapTest {
 
     private MinIntHeap minHeap;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         minHeap = new MinIntHeap();
         minHeap.add(6);
@@ -23,21 +23,21 @@ public class MinIntHeapTest {
     @Test
     public void Insert() {
         // Remember: The array walks top down / left to right
-        Assert.assertEquals(1, minHeap.items[0]);
-        Assert.assertEquals(3, minHeap.items[1]);
-        Assert.assertEquals(2, minHeap.items[2]);
-        Assert.assertEquals(6, minHeap.items[3]);
-        Assert.assertEquals(4, minHeap.items[4]);
-        Assert.assertEquals(5, minHeap.items[5]);
+        assertEquals(1, minHeap.items[0]);
+        assertEquals(3, minHeap.items[1]);
+        assertEquals(2, minHeap.items[2]);
+        assertEquals(6, minHeap.items[3]);
+        assertEquals(4, minHeap.items[4]);
+        assertEquals(5, minHeap.items[5]);
     }
 
     @Test
     public void ExtractMin() {
-        Assert.assertEquals(1, minHeap.extractMin());
-        Assert.assertEquals(2, minHeap.extractMin());
-        Assert.assertEquals(3, minHeap.extractMin());
-        Assert.assertEquals(4, minHeap.extractMin());
-        Assert.assertEquals(5, minHeap.extractMin());
-        Assert.assertEquals(6, minHeap.extractMin());
+        assertEquals(1, minHeap.extractMin());
+        assertEquals(2, minHeap.extractMin());
+        assertEquals(3, minHeap.extractMin());
+        assertEquals(4, minHeap.extractMin());
+        assertEquals(5, minHeap.extractMin());
+        assertEquals(6, minHeap.extractMin());
     }
 }

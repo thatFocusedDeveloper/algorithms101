@@ -9,9 +9,9 @@ import course.challenges.classics.IntReverser;
 import course.challenges.classics.RansomNote;
 import course.challenges.classics.SieveOfEratosthenes;
 import course.challenges.classics.StringReverser;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class   ClassicsTest {
 
@@ -25,7 +25,7 @@ public class   ClassicsTest {
     private Anagram anagram;
     private CharacterCount characterCount;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         fizzBuzz = new FizzBuzz();
         ransomNote = new RansomNote();
@@ -65,11 +65,11 @@ public class   ClassicsTest {
         // Every letter found in the magazine string can only be used once in your
         // ransom note.
 
-        Assert.assertTrue(ransomNote.canWrite("Pay", "yaP"));
-        Assert.assertTrue(ransomNote.canWrite("Pay", "yaP a"));
-        Assert.assertTrue(ransomNote.canWrite("Pay me $1000", "ayPem0001$"));
+        assertTrue(ransomNote.canWrite("Pay", "yaP"));
+        assertTrue(ransomNote.canWrite("Pay", "yaP a"));
+        assertTrue(ransomNote.canWrite("Pay me $1000", "ayPem0001$"));
 
-        Assert.assertFalse(ransomNote.canWrite("Pay", "Pa"));
+        assertFalse(ransomNote.canWrite("Pay", "Pa"));
     }
 
     @Test
@@ -94,19 +94,19 @@ public class   ClassicsTest {
 
         // First attempt...
 
-        Assert.assertEquals("XYZ", caesarSimple.encrypt("ABC"));
-        Assert.assertEquals("X Y Z", caesarSimple.encrypt("A B C"));
-        Assert.assertEquals("QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD", caesarSimple.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"));
+        assertEquals("XYZ", caesarSimple.encrypt("ABC"));
+        assertEquals("X Y Z", caesarSimple.encrypt("A B C"));
+        assertEquals("QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD", caesarSimple.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"));
 
-        Assert.assertEquals("ABC", caesarSimple.decrypt("XYZ"));
+        assertEquals("ABC", caesarSimple.decrypt("XYZ"));
 
         // Second attempt (after some Googling...)
 
-        Assert.assertEquals("DEF", caesarAdvanced.encrypt("ABC", 3));
-        Assert.assertEquals("D E F", caesarAdvanced.encrypt("A B C", 3));
-        Assert.assertEquals("WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ", caesarAdvanced.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG", 3));
+        assertEquals("DEF", caesarAdvanced.encrypt("ABC", 3));
+        assertEquals("D E F", caesarAdvanced.encrypt("A B C", 3));
+        assertEquals("WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ", caesarAdvanced.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG", 3));
 
-        Assert.assertEquals("A B C", caesarAdvanced.decrypt("D E F", 3));
+        assertEquals("A B C", caesarAdvanced.decrypt("D E F", 3));
 
         // Note: The reason why the first attempt and second attempt have different expectations (ABC vs DEF)
         // is because the second attempt shifts the other way. I left the examples as is so they match wikiPedia examples
@@ -129,12 +129,12 @@ public class   ClassicsTest {
         // "abc" => "cba"
 
         // Soln1
-        Assert.assertEquals("olleH", stringReverser.soln1("Hello"));
-        Assert.assertEquals("maS", stringReverser.soln1("Sam"));
+        assertEquals("olleH", stringReverser.soln1("Hello"));
+        assertEquals("maS", stringReverser.soln1("Sam"));
 
         // Soln2
-        Assert.assertEquals("norT", stringReverser.soln2("Tron"));
-        Assert.assertEquals("nnylF", stringReverser.soln2("Flynn"));
+        assertEquals("norT", stringReverser.soln2("Tron"));
+        assertEquals("nnylF", stringReverser.soln2("Flynn"));
     }
 
     @Test
@@ -143,8 +143,8 @@ public class   ClassicsTest {
         // x = 123, return 321
         // x= -123, return -321
 
-        Assert.assertEquals(321, intReverser.reverse(123));
-        Assert.assertEquals(-321, intReverser.reverse(-123));
+        assertEquals(321, intReverser.reverse(123));
+        assertEquals(-321, intReverser.reverse(-123));
     }
 
     @Test
@@ -157,14 +157,14 @@ public class   ClassicsTest {
         // state => taste
 
         // Soln1
-        Assert.assertTrue(anagram.isAnagram1("arc", "car"));
-        Assert.assertTrue(anagram.isAnagram1("night", "thing"));
-        Assert.assertFalse(anagram.isAnagram1("cat", "dog"));
+        assertTrue(anagram.isAnagram1("arc", "car"));
+        assertTrue(anagram.isAnagram1("night", "thing"));
+        assertFalse(anagram.isAnagram1("cat", "dog"));
 
         // Soln2
-        Assert.assertTrue(anagram.isAnagram2("arc", "car"));
-        Assert.assertTrue(anagram.isAnagram2("night", "thing"));
-        Assert.assertFalse(anagram.isAnagram2("cat", "dog"));
+        assertTrue(anagram.isAnagram2("arc", "car"));
+        assertTrue(anagram.isAnagram2("night", "thing"));
+        assertFalse(anagram.isAnagram2("cat", "dog"));
     }
 
     @Test
@@ -176,8 +176,8 @@ public class   ClassicsTest {
         // abbbbc => b
         // abcxxxyyyzzz => z
 
-        Assert.assertEquals("b", characterCount.maxChar("abbbbc"));
-        Assert.assertEquals("z", characterCount.maxChar("shazzzzzam!"));
+        assertEquals("b", characterCount.maxChar("abbbbc"));
+        assertEquals("z", characterCount.maxChar("shazzzzzam!"));
 
         // What about a tie?
     }

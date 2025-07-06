@@ -1,15 +1,15 @@
 package course.datastructures;
 
 import course.datastructures.HashTable;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class HashTableTest {
 
     private HashTable hashTable;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         hashTable = new HashTable();
     }
@@ -22,20 +22,20 @@ public class HashTableTest {
         hashTable.put("Sandra Dee", "521-9655");
         hashTable.put("Ted Baker", "418-4165");
 
-        Assert.assertEquals("521-1234", hashTable.get("John Smith"));
-        Assert.assertEquals("521-8976", hashTable.get("Lisa Smith"));
-        Assert.assertEquals("521-5030", hashTable.get("Sam Doe"));
-        Assert.assertEquals("521-9655", hashTable.get("Sandra Dee"));
-        Assert.assertEquals("418-4165", hashTable.get("Ted Baker"));
-        Assert.assertEquals(null, hashTable.get("Tim Lee"));
+        assertEquals("521-1234", hashTable.get("John Smith"));
+        assertEquals("521-8976", hashTable.get("Lisa Smith"));
+        assertEquals("521-5030", hashTable.get("Sam Doe"));
+        assertEquals("521-9655", hashTable.get("Sandra Dee"));
+        assertEquals("418-4165", hashTable.get("Ted Baker"));
+        assertEquals(null, hashTable.get("Tim Lee"));
 
         hashTable.toString();
     }
 
     @Test
     public void Empty() {
-        Assert.assertEquals(null, hashTable.get("Ted Baker"));
-        Assert.assertEquals(null, hashTable.get("Tim Lee"));
+        assertEquals(null, hashTable.get("Ted Baker"));
+        assertEquals(null, hashTable.get("Tim Lee"));
         hashTable.toString();
     }
 
@@ -45,8 +45,8 @@ public class HashTableTest {
         hashTable.put("John Smith", "521-1234");
         hashTable.put("Sandra Dee", "521-9655");
 
-        Assert.assertEquals("521-1234", hashTable.get("John Smith"));
-        Assert.assertEquals("521-9655", hashTable.get("Sandra Dee"));
-        Assert.assertEquals(null, hashTable.get("Tim Lee"));
+        assertEquals("521-1234", hashTable.get("John Smith"));
+        assertEquals("521-9655", hashTable.get("Sandra Dee"));
+        assertEquals(null, hashTable.get("Tim Lee"));
     }
 }

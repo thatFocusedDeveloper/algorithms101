@@ -1,85 +1,161 @@
 package myPractice.round1.datastructures;
 
-import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class LinkedList {
-    // Variables
-    private Node headNode;
-    private Node lastNode;
-    int size;
+    private Node head;
+    private Node tail;
+    private int size=0;
 
+    private class Node {
+        Integer data;           // Package-private (no modifier)
+        Node next;        // Package-private (no modifier)
 
-    // Use Default Constructor
+        public Node (Integer data) {
+            this.data = data;
+        }
+    }
 
+    // Others
+    public boolean isEmpty() {
+        return head == null;
+    }
 
-    // Create
-    public void addFirst (int data) {
+    public int size() {
+        return size;
+    }
+
+    // Insert
+    // Add to head
+    public void addFront(Integer data) {
         Node newNode = new Node(data);
-        if(headNode==null) {
-            headNode = newNode;
+        if(head==null) {
+            head = newNode;
+            tail = newNode;
         } else {
-            newNode.next=headNode;
-            headNode = newNode;
+            newNode.next = head;
+            head = newNode;
         }
         size++;
     }
 
 
 
-    // Retrieve
-    /// get First
-    public int getFirst() {
-        if(headNode==null) {
-            throw new NoSuchElementException();
+    // Add to Tail
+    public void addBack(Integer data) {
+        if(data == null){
+            throw new IllegalArgumentException("Data cannot be null");
         }
-        return headNode.data;
+        Node newNode = new Node(data);
+        if(head==null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
     }
 
 
-    public int getLast() {
-        if(headNode==null) {
-            throw new NoSuchElementException();
-        }
-        Node current = headNode;
-        // while we are not at the tail
-        while(current.next != null) {
-            current = current.next;
-        }
 
-        // return data of the tail
-        return current.data;
+    // Get Head
+    public Integer getFirst() {
+        if(head==null) {
+            throw new IllegalStateException("List is empty");
+        }
+        return head.data;
     }
 
+    public Integer getLast() {
+        if(head==null) {
+            throw new IllegalStateException("List is empty");
+        }
+        return tail.data;
+    }
 
-    // Update
-    /// set
 
     // Delete
-    /// remove
-
-
-    // Others
-
-    /// is empty
-
-    ///  contains
-
-    /// size()
-    public int size() {
-        return size;
-    }
-
-
-    /// to string
-
-
-    private static class Node {
-        int data;
-        Node next;
-
-        public Node (int data) {
-            this.data = data;
+    public void deleteFirst() {
+        if(head == null) {
+            throw new IllegalStateException("List is empty");
         }
+        Node curHead = head;
+        head = head.next;
+        curHead.next = null;
+        size--;
     }
 
+    public void deleteLast() {
+        if(head == null){
+            throw new IllegalStateException("List is empty");
+        }
+        Node prevNode = null;
+        Node curNode = head;
+        while(curNode.next != null) {
+            prevNode = curNode;
+            curNode = curNode.next;
+        }
+        prevNode.next=null;
+        tail=prevNode;
+        size--;
+    }
+
+    public boolean delete(Integer data) {
+        if (head == null) {
+            return false; // Return false instead of throwing exception for empty list
+        }
+        if (data == null) {
+            throw new IllegalArgumentException("Data cannot be null");
+        }
+
+        // Handle deleting the head node
+        if (Objects.equals(head.data, data)) {
+            if (head == tail) { // Single element list
+                head = null;
+                tail = null;
+            } else {
+                head = head.next;
+            }
+            size--;
+            return true;
+        }
+
+        // Handle deleting from middle or end
+        Node prevNode = head;
+        Node curNode = head.next;
+
+        while (curNode != null) { // Fixed: check curNode != null instead of curNode.next != null
+            if (Objects.equals(curNode.data, data)) {
+                prevNode.next = curNode.next;
+                if (curNode == tail) { // Update tail if we're deleting the last node
+                    tail = prevNode;
+                }
+                curNode.next = null; // Help GC
+                size--;
+                return true;
+            }
+            prevNode = curNode;
+            curNode = curNode.next;
+        }
+
+        return false; // Element not found
+    }
+
+    public boolean contains(Integer data) {
+        Node curNode = head;
+        while(curNode!= null){
+            if(Objects.equals(curNode.data, data)) {
+                return true;
+            }
+            curNode = curNode.next;
+        }
+        return false;
+    }
+
+    public void clear() {
+        head= null;
+        tail=null;
+        size=0;
+    }
 }
