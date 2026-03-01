@@ -30,3 +30,6 @@ hs_err_pid*
 .DS_Store
 
 .qodo
+
+# Resume documents
+Documents/Resume/

@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Distinct",
+            "request": "launch",
+            "mainClass": "myPractice.round1.datastructures.Distinct",
+            "projectName": "algorithms"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-App<algorithms>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "myPractice.round1.datastructures.App",
+            "projectName": "algorithms",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
